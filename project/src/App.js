@@ -4,6 +4,7 @@ import CartPage from './pages/Cart';
 import Layout from './components/layout/Layout';
 import OrderDonePage from './pages/OrderDone'; 
 import { Checkout } from './pages/Checkout';
+import AllBooksPage from './pages/AllBooks';
 
 function App() {
   return(
@@ -11,10 +12,10 @@ function App() {
       <Layout>
       <Switch>
       <Route path='/' exact>
-        <Home initialTotal={0}/>
+        <AllBooksPage/>
       </Route>
       <Route path='/home' exact>
-        <Home/>
+        <AllBooksPage/>
       </Route>
       <Route path='/cart'>
         <CartPage/>

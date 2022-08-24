@@ -8,10 +8,10 @@ function BookItem(props) {
         cartCtx.addToCart({
             key:props.id, 
             id: props.id,
-            image:props.image.data, 
-            title:props.bookTitle,
-            genre:props.bookGenre,
-            price:props.bookPrice
+            image:{data:props.image, type:0}, 
+            bookTitle:props.title,
+            bookGenre:props.genre,
+            bookPrice:props.price
         })
     }
     const [quantity, setQuantity] = useState(0);

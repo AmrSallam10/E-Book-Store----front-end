@@ -3,9 +3,9 @@ import { createContext, useState } from "react";
 const CartContext= createContext({
     buying: [],
     totalBuying:0,
-    addToCart: (addBook)={},
-    removeFromCart: (bookID)={},
-    inCart: (bookID)={}
+    addToCart: (addBook)=>{},
+    removeFromCart: (bookID)=>{},
+    inCart: (bookID)=>{}
 });
 
 export function CartContextProvider(props){
