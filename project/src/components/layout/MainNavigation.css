@@ -1,0 +1,49 @@
+.navBar {
+  margin-top: 35px;
+  left: 0px;
+  width: 1366px;
+  height: 52px;
+  background: #88A85D 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+}
+.home {
+  margin-left: 150px;
+  width: 48px;
+  height: 22px;
+  text-align: right;
+  font: normal normal bold 17px/22px Segoe UI;
+  letter-spacing: 0px;
+  color: black;
+  opacity: 1;
+}
+.cartButton{
+  margin-right: 150px;
+  width: 140px;
+  height: 30px;
+  background: #D4DEC7 0% 0% no-repeat padding-box;
+  opacity: 1;
+  float: right;
+  
+  text-align: center;
+  text-indent: 20px;
+  font: normal normal normal 12px/17px Segoe UI;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+}
+.cart{
+    top: 51px;
+    left: 1096px;
+    width: 26px;
+    height: 21px;
+    background: transparent 0% 0% no-repeat padding-box; 
+    opacity: 1;
+}
+
+  .homeCart{
+    text-align: right;
+font: normal normal normal 17px/22px Segoe UI;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+  }

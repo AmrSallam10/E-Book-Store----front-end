@@ -1,0 +1,30 @@
+.ODPage{
+    display: flex;
+    flex-direction: column;
+}
+
+.success{
+    font: var(--unnamed-font-style-normal) normal 600 28px/27px var(--unnamed-font-family-segoe-ui);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: center;
+    font: normal normal 600 28px/27px Segoe UI;
+    letter-spacing: 0px;
+    color: #4B8300;
+    opacity: 1;
+}
+
+.homeFromSuccess{
+    background: #88A85D 0% 0% no-repeat padding-box;
+    opacity: 1;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 15px/17.35px var(--unnamed-font-family-segoe-ui);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: center;
+    font: normal normal normal 15px/17px Segoe UI;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.applauseImage{
+    background: transparent 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
