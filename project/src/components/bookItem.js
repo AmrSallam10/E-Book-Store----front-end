@@ -12,7 +12,7 @@ function BookItem(props) {
             bookTitle:props.title,
             bookGenre:props.genre,
             bookPrice:props.price,
-            bookQuantity: quantity
+            bookQuantity: parseInt(quantity)
         })
     }
     const [quantity, setQuantity] = useState(0);

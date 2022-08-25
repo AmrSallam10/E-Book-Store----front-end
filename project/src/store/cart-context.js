@@ -11,31 +11,41 @@ const CartContext= createContext({
 
 export function CartContextProvider(props){
     const [userBuys, setUserBuys]= useState([]);
+    const [sum, setSum] = useState(0);
+
 
     function addToCartHandler(addBook){
         setUserBuys((prevBuying) => {
             return prevBuying.concat(addBook);
         });
+        setSum((prevSum) => {
+            return prevSum+(addBook.price*addBook.quantity);
+        })
     }
     function removeFromCartHandler(bookID){
         setUserBuys((prevBuying) => {
             return prevBuying.filter(book => book.id!==bookID);
         });
+        /*setSum((prevSum) => {
+            return prevSum-(addBook.price*addBook.quantity);
+        })*/
     }
     function inCartHandler(bookID){
         return userBuys.some(book => book.id===bookID);
     }
-
-    const sum = userBuys.reduce(add, 0); 
+    function addToSubtotal(addBook){
+        
+    }
+    /*const sum = userBuys.reduce(add, 0); 
 
     function add(accumulator, a) {
     return (accumulator.price*accumulator.quantity) + a;
-    }
+    }*/
 
     const context={
         buying: userBuys,
         totalBuying: userBuys.length,
-        totalPrice: sum,
+        totalPrice: userBuys.reduce((accumulator, a) => {return (accumulator.price*accumulator.quantity) + a;}, 0),
         addToCart: addToCartHandler,
         removeFromCart: removeFromCartHandler,
         inCart: inCartHandler

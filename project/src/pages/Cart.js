@@ -44,9 +44,8 @@ function CartPage() {
         content=<Carts books={cartCtx}/>
     }
 
-    function toggleDeleteHandler(){
-        //cartCtx.removeFromCart(props.id);
-    }
+    console.log(cartCtx);
+
     const history= useHistory();
     const redirectToHome= () => {
         history.push('/');
@@ -73,9 +72,9 @@ function CartPage() {
               <br/>
           </div>
           <div className='cartFinalBox'>
-              <div className='subtotal'>Subtotal: {cartCtx.sum}</div>
-              <div className='subtotal'>Delivery: 20 EGP</div>
-              <div>Total</div>
+              <div className='subtotal'>Subtotal: <div className='subtotalValue'>{cartCtx.totalPrice}</div></div>
+              <div className='subtotal'>Delivery: <div className='subtotalValue'>20 EGP</div></div>
+              <div>Total <div className='totalValue'>{cartCtx.totalPrice+20}</div></div>
               <button className= 'proceedChck' onClick={redirectToCheckout}>Proceed to Checkout</button>
           </div>
           <button className= 'addMoreBox' onClick={redirectToHome}>Add More Items</button>

@@ -166,7 +166,9 @@ export class Checkout extends React.Component
     <Link to="cart">    
     <button type='button'>Back to Cart</button>
     </Link>
+    <Link to="orderDone">   
     <button type='submit'>Place Order</button>
+    </Link>
     </form>
    
     </div>

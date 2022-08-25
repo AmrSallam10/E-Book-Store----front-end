@@ -12,7 +12,7 @@ function CartItem(props) {
             bookTitle:props.title,
             bookGenre:props.genre,
             bookPrice:props.price,
-            bookQuantity: props.quantity
+            bookQuantity: parseInt(props.quantity)
         })
     }
     const [quantity, setQuantity] = useState(0);
@@ -28,16 +28,17 @@ function CartItem(props) {
         <div>
 
 
-
+            <div className='leftLine'></div>
             <div className='cartBox'>
                 <div>
                     <img className= "cartImage" src={"data:image/png;base64, "+props.image} alt={props.title}/>
                     <div className='bookTitleCart'>{props.title}</div>
                     <div className='genre'>{props.genre}</div>
                 
-                    <div>{props.quantity}</div>
+                    {/* <div>{props.quantity}</div> */}
+                    <input type="number" value={props.quantity} onChange={handleQuantityChange}/>
                     <button className='deleteButton' onClick={toggleDeleteHandler}>Delete</button>
-                    <div>{props.price}</div>
+                    <div>{props.totalPrice}</div>
                     <br/>
                 </div>
                 <div className='line'><div/>
