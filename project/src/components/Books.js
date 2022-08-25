@@ -11,6 +11,7 @@ function Books(props) {
           title={book.bookTitle}
           genre={book.bookGenre}
           price={book.bookPrice}
+          quantity={book.bookQuantity}
         />
       ))}
     </div>

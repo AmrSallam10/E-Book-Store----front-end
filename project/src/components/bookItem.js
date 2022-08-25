@@ -11,7 +11,8 @@ function BookItem(props) {
             image:{data:props.image, type:0}, 
             bookTitle:props.title,
             bookGenre:props.genre,
-            bookPrice:props.price
+            bookPrice:props.price,
+            bookQuantity: quantity
         })
     }
     const [quantity, setQuantity] = useState(0);

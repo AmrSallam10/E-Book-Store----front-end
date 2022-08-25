@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 const CartContext= createContext({
     buying: [],
     totalBuying:0,
+    totalPrice:0,
     addToCart: (addBook)=>{},
     removeFromCart: (bookID)=>{},
     inCart: (bookID)=>{}
@@ -25,9 +26,16 @@ export function CartContextProvider(props){
         return userBuys.some(book => book.id===bookID);
     }
 
+    const sum = userBuys.reduce(add, 0); 
+
+    function add(accumulator, a) {
+    return (accumulator.price*accumulator.quantity) + a;
+    }
+
     const context={
         buying: userBuys,
         totalBuying: userBuys.length,
+        totalPrice: sum,
         addToCart: addToCartHandler,
         removeFromCart: removeFromCartHandler,
         inCart: inCartHandler
