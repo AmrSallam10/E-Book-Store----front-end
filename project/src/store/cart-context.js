@@ -18,9 +18,9 @@ export function CartContextProvider(props){
         setUserBuys((prevBuying) => {
             return prevBuying.concat(addBook);
         });
-        setSum((prevSum) => {
-            return prevSum+(addBook.price*addBook.quantity);
-        })
+        // setSum((prevSum) => {
+        //     return prevSum+(addBook.price*addBook.quantity);
+        // })
     }
     function removeFromCartHandler(bookID){
         setUserBuys((prevBuying) => {

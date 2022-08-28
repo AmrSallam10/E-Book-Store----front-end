@@ -25,27 +25,32 @@ function CartItem(props) {
 
 
     return (
-        <div>
+        <div className="parent">
 
-
-            <div className='leftLine'></div>
+<img className= "cartImage" src={"data:image/png;base64, "+props.image} alt={props.title}/>
+<div className="cartItem">
+            <div className='leftLine' />
             <div className='cartBox'>
                 <div>
-                    <img className= "cartImage" src={"data:image/png;base64, "+props.image} alt={props.title}/>
                     <div className='bookTitleCart'>{props.title}</div>
                     <div className='genre'>{props.genre}</div>
                 
                     {/* <div>{props.quantity}</div> */}
+                    <div>{props.price} EGP</div>
                     <input type="number" value={props.quantity} onChange={handleQuantityChange}/>
                     <button className='deleteButton' onClick={toggleDeleteHandler}>Delete</button>
-                    <div>{props.totalPrice}</div>
                     <br/>
                 </div>
-                <div className='line'><div/>
-            </div>
+                
         </div> 
+        
+        </div> 
+        <div className='line'>
+            </div>
 
         </div>
+      
+
         );
 }
 export default CartItem;

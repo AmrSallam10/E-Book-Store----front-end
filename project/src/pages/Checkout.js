@@ -73,9 +73,9 @@ export class Checkout extends React.Component
             date:event.target.value
         })
     }
-    submitHandler(event){
+    /*submitHandler(event){
         event.preventDefault
-    }
+    }*/
 
 
     /*phoneInput= useRef();
@@ -103,7 +103,7 @@ export class Checkout extends React.Component
     render()
     {
         return(
-
+            
 <div>
     
 
@@ -116,7 +116,7 @@ export class Checkout extends React.Component
     <img src={product} className="checkoutIcon" alt="Product" />
     <div className="checkoutTitle">Order Items</div>
     <div className="checkoutText">Subtotal </div>
-    <div className="checkoutText">Delivery </div>
+    <div className="checkoutText">Delivery 20 EGP</div>
     </div>
 
     <div className="orderBox">
@@ -128,7 +128,7 @@ export class Checkout extends React.Component
 <br />
 
 <div className='inL'> 
-    <form onSubmit={this.submitHandler.bind(this)}>
+    <form /*onSubmit={this.submitHandler.bind(this)}*/>
     <div className="orderBox">
     <img src={phone} className="checkoutIcon" alt="Phone" />
     <div className="checkoutTitle">

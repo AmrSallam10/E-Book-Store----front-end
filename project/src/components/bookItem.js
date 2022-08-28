@@ -39,7 +39,7 @@ function BookItem(props) {
             <div className="quantity">Quantity</div>
             <input type="number" value={quantity} onChange={handleQuantityChange}/>
             <br/>
-            <button className="addToCartButton" /*onClick={props.addtoTotal(quantity)}*/ onClick={toggleCartStatusHandler}>Add to Cart</button>
+            <button className="addToCartButton" onClick={toggleCartStatusHandler}>Add to Cart</button>
             </div>
 
         </div> 

@@ -8,6 +8,30 @@ import axios from "axios";
 import "../components/ui/Cart.css";
 import CartContext from '../store/cart-context';
 
+function calculateSubtotal (buying)
+{
+
+    /*const sum = userBuys.reduce(add, 0); 
+
+    function add(accumulator, a) {
+    return (accumulator.price*accumulator.quantity) + a;
+    }*/
+
+    // var totalSum = buying.reduce((accumulator, a) => {
+    //   return (parseInt(accumulator.bookPrice)*parseInt(accumulator.bookQuantity)) + parseInt(a);
+    //   }, 0)
+var SUM =0;
+  var totalSum = buying.map(product => SUM+= (parseInt(product.bookPrice) * parseInt(product.bookQuantity)));
+
+  console.log("TOTAL SUM: ", totalSum);
+  return totalSum;
+  // sum = product.price * product.quantity
+
+  // sum = buying.book.price * buying.book.quantity
+  // totalSum += sum
+}
+
+
 function Carts(props)
 {
     return (
@@ -33,6 +57,11 @@ function Carts(props)
 
 function CartPage() {
     const cartCtx= useContext(CartContext);
+    const [cartSum, setCartSum] = useState(0);
+    useEffect(() => {
+      const sum = calculateSubtotal(cartCtx.buying);
+      setCartSum(sum);
+    },[cartCtx.buying, cartCtx.removeFromCart])
     console.log(cartCtx.buying);
     let content;
     if (cartCtx.totalBuying===0)
@@ -55,32 +84,26 @@ function CartPage() {
     };
 
     return(
-      
           <div className='cartPage'>
               
-      
+          <div>
              <div className="cartTitle"> Cart </div>
-             <div className='cartBox'>
-              {content}
-              <div>
-                                    
-                  
+             <div className='cartBox'>{content}</div>
+              
+              <br/>
               </div>
-              <div className='line'><div/>
-              <br/>
-              <br/>
-              <br/>
-          </div>
           <div className='cartFinalBox'>
-              <div className='subtotal'>Subtotal: <div className='subtotalValue'>{cartCtx.totalPrice}</div></div>
+              <div className='subtotal'>Subtotal: <div className='subtotalValue'>{cartSum[cartSum.length-1]}</div></div>
               <div className='subtotal'>Delivery: <div className='subtotalValue'>20 EGP</div></div>
-              <div>Total <div className='totalValue'>{cartCtx.totalPrice+20}</div></div>
+              {/* <div>Total <div className='totalValue'>{cartCtx.totalBuying===0? 0:cartCtx.totalPrice+20}</div></div> */}
+              <div>Total <div className='totalValue'>{cartCtx.totalBuying===0? 0: parseInt(cartSum[cartSum.length-1])+parseInt(20)}</div></div>
               <button className= 'proceedChck' onClick={redirectToCheckout}>Proceed to Checkout</button>
           </div>
           <button className= 'addMoreBox' onClick={redirectToHome}>Add More Items</button>
       
+          
           </div>
-          </div>);
+         );
   }
 
 export default CartPage;
