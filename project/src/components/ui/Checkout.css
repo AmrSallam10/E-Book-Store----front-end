@@ -40,11 +40,20 @@
   }
   .inL
   {
-   display: flex; 
-   flex-direction: column;
-
+  flex-direction: column;
+   margin-top: 50px;
+   margin-left: 100px;
   }
-  .checkoutButton{
 
-    display: center;
+ .allBooks{
+  position: relative;
+  margin-top: 1.5%;
+} 
+  .buttons{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
   }

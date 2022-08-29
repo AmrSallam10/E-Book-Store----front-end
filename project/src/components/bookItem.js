@@ -1,5 +1,4 @@
 import { useState, useContext } from "react";
-import classes from "../components/ui/Home.css";
 import CartContext from '../store/cart-context'
 function BookItem(props) {
     const cartCtx= useContext(CartContext);

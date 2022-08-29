@@ -44,6 +44,7 @@ function CartItem(props) {
 <img className= "cartImage" src={"data:image/png;base64, "+props.image} alt={props.title}/>
 <div className="cartItem">
             <div className='leftLine' />
+
             <div className='cartBox'>
                 <div>
                     <div className='bookTitleCart'>{props.title}</div>
@@ -55,8 +56,9 @@ function CartItem(props) {
                     <button className='deleteButton' onClick={toggleConfirmHandler}>Confirm</button>
                     <button className='deleteButton' onClick={toggleDeleteHandler}>Delete</button>
                     <br/>
+
                 </div>
-                
+
         </div> 
         
         </div> 

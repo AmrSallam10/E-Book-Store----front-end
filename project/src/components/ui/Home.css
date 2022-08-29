@@ -1,8 +1,9 @@
 .allBooks{
+  margin-top: 10%;
     display: flex;
     flex-direction: row;
     border: 5 px solid;
-    
+   
   }
   .imageContainer{
     margin-left: 120px;

@@ -71,13 +71,13 @@ const submitHandler = (event)=> {
             <div className="orderBox">
             <img src={product} className="checkoutIcon" alt="Product" />
             <div className="checkoutTitle">Order Items</div>
-            <div className="checkoutText">Subtotal {getSum()}</div>
+            <div className="checkoutText">Subtotal {getSum()} EGP</div>
             <div className="checkoutText">Delivery 20 EGP</div>
             </div>
         
             <div className="orderBox">
             <img src={money} className="checkoutIcon" alt="Money" />
-            <div className="checkoutTitle">Total: {parseInt(getSum())+parseInt(20)}</div>
+            <div className="checkoutTitle">Total: {parseInt(getSum())+parseInt(20)} EGP</div>
             <div className="checkoutText">Payment by cash on delivery</div>
             </div>
         </div>
@@ -119,17 +119,22 @@ const submitHandler = (event)=> {
             </div>
         
             </div>
-        
+            </form>
+            </div>
+
+<div className="buttons">
+
+
             <button type='submit' onClick={submitHandler} className="checkoutButton">Click here to see info in console</button>
             <br/>
             <Link to="cart">    
-            <button type='button'>Back to Cart</button>
+            <button type='button' className="checkoutButton">Back to Cart</button>
             </Link>
             <Link to="orderDone">   
-            <button type='submit'>Place Order</button>
+            <button type='submit' className="checkoutButton">Place Order</button>
             </Link>
-            </form>
             </div>
+           
 
            
          
