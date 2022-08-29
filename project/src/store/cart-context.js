@@ -13,11 +13,17 @@ export function CartContextProvider(props){
     const [userBuys, setUserBuys]= useState([]);
     const [sum, setSum] = useState(0);
 
+    function inCartHandler(bookID){
+        return userBuys.some(book => book.id===bookID);
+    }
 
     function addToCartHandler(addBook){
-        setUserBuys((prevBuying) => {
-            return prevBuying.concat(addBook);
-        });
+
+      
+            setUserBuys((prevBuying) => {
+                return prevBuying.filter(book => book.id != addBook.id).concat(addBook);
+            });
+        
         // setSum((prevSum) => {
         //     return prevSum+(addBook.price*addBook.quantity);
         // })
@@ -30,9 +36,7 @@ export function CartContextProvider(props){
             return prevSum-(addBook.price*addBook.quantity);
         })*/
     }
-    function inCartHandler(bookID){
-        return userBuys.some(book => book.id===bookID);
-    }
+   
     function addToSubtotal(addBook){
         
     }
@@ -45,7 +49,8 @@ export function CartContextProvider(props){
     const context={
         buying: userBuys,
         totalBuying: userBuys.length,
-        totalPrice: userBuys.reduce((accumulator, a) => {return (accumulator.price*accumulator.quantity) + a;}, 0),
+        // totalPrice: userBuys.reduce((accumulator, a) => {return (accumulator.price*accumulator.quantity) + a;}, 0),
+        //totalPrice: ,
         addToCart: addToCartHandler,
         removeFromCart: removeFromCartHandler,
         inCart: inCartHandler

@@ -15,14 +15,28 @@ function CartItem(props) {
             bookQuantity: parseInt(props.quantity)
         })
     }
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(props.quantity);
+
+   
     function toggleDeleteHandler(){
         cartCtx.removeFromCart(props.id);
     }
     function handleQuantityChange(evt) {
         setQuantity(evt.target.value);
     }
+    function toggleConfirmHandler()
+    {
+        cartCtx.addToCart({
+            key:props.id, 
+            id: props.id,
+            image:{data:props.image, type:0}, 
+            bookTitle:props.title,
+            bookGenre:props.genre,
+            bookPrice:props.price,
+            bookQuantity: parseInt(quantity)
+        });
 
+    }
 
     return (
         <div className="parent">
@@ -37,7 +51,8 @@ function CartItem(props) {
                 
                     {/* <div>{props.quantity}</div> */}
                     <div>{props.price} EGP</div>
-                    <input type="number" value={props.quantity} onChange={handleQuantityChange}/>
+                    <input type="number" value={quantity} onChange={handleQuantityChange}/>
+                    <button className='deleteButton' onClick={toggleConfirmHandler}>Confirm</button>
                     <button className='deleteButton' onClick={toggleDeleteHandler}>Delete</button>
                     <br/>
                 </div>

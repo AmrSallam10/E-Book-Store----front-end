@@ -58,10 +58,12 @@ function Carts(props)
 function CartPage() {
     const cartCtx= useContext(CartContext);
     const [cartSum, setCartSum] = useState(0);
+
     useEffect(() => {
       const sum = calculateSubtotal(cartCtx.buying);
       setCartSum(sum);
     },[cartCtx.buying, cartCtx.removeFromCart])
+    cartCtx.totalPrice=cartSum
     console.log(cartCtx.buying);
     let content;
     if (cartCtx.totalBuying===0)
@@ -93,17 +95,22 @@ function CartPage() {
               <br/>
               </div>
           <div className='cartFinalBox'>
-              <div className='subtotal'>Subtotal: <div className='subtotalValue'>{cartSum[cartSum.length-1]}</div></div>
+              <div className='subtotal'>Subtotal: <div className='subtotalValue'>{cartSum[cartSum.length-1]} EGP</div></div>
               <div className='subtotal'>Delivery: <div className='subtotalValue'>20 EGP</div></div>
               {/* <div>Total <div className='totalValue'>{cartCtx.totalBuying===0? 0:cartCtx.totalPrice+20}</div></div> */}
-              <div>Total <div className='totalValue'>{cartCtx.totalBuying===0? 0: parseInt(cartSum[cartSum.length-1])+parseInt(20)}</div></div>
+              <div>Total <div className='totalValue'>{cartCtx.totalBuying===0? 0: parseInt(cartSum[cartSum.length-1])+parseInt(20)} EGP</div></div>
               <button className= 'proceedChck' onClick={redirectToCheckout}>Proceed to Checkout</button>
           </div>
           <button className= 'addMoreBox' onClick={redirectToHome}>Add More Items</button>
       
           
           </div>
+               
          );
+         
+
+       
   }
 
 export default CartPage;
+

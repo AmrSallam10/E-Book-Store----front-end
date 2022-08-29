@@ -1,4 +1,4 @@
-import BookItem from './bookItem';
+import BookItem from './BookItem';
 
 function Books(props) {
   return (

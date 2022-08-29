@@ -6,6 +6,7 @@ function AllBooksPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedBooks, setLoadedBooks] = useState([]);
   const url = 'http://localhost:8080/api/bookstore/';
+  //const url = 'http://api.bookstore-ebooks.agiletz.com/api/bookstore/';
   useEffect(() => {
     setIsLoading(true);
     axios.get(

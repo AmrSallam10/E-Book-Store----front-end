@@ -3,7 +3,7 @@ import {Home} from './pages/Home';
 import CartPage from './pages/Cart';
 import Layout from './components/layout/Layout';
 import OrderDonePage from './pages/OrderDone'; 
-import { Checkout } from './pages/Checkout';
+import Checkout from './pages/Checkout';
 import AllBooksPage from './pages/AllBooks';
 
 function App() {
@@ -18,10 +18,10 @@ function App() {
         <AllBooksPage/>
       </Route>
       <Route path='/cart'>
-        <CartPage/>
+        <CartPage />
       </Route>
       <Route path='/checkout'>
-        <Checkout/>
+        <Checkout />
       </Route>
       <Route path='/orderDone'>
         <OrderDonePage/>
