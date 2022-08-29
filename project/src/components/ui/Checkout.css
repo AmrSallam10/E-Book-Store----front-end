@@ -40,7 +40,11 @@
   }
   .inL
   {
-   display: flex;
+   display: flex; 
    flex-direction: column;
 
+  }
+  .checkoutButton{
+
+    display: center;
   }
