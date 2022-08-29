@@ -3,8 +3,6 @@ import {useRef} from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 
-import ruins from "../components/images/ruins.png";
-import knife from "../components/images/knife.png";
 import Books from "../components/Books.js";
 import "../components/ui/Home.css";
 //import { getBooks } from '../BookService';
